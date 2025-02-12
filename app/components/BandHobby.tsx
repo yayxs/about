@@ -12,7 +12,7 @@ interface BandInfo {
 
 export function BandHobby() {
   // 初始化乐队信息
-  const [bands, setBands] = React.useState<BandInfo[]>([
+  const [bands] = React.useState<BandInfo[]>([
     {
       id: 1,
       name: "告五人",
@@ -34,7 +34,145 @@ export function BandHobby() {
       comment: "就是要逆着风",
       scene: "挣脱感 破土"
     },
-    // 其他乐队信息...
+    {
+      id: 4,
+      name: "痛仰乐队",
+      favoriteWork: "《西湖》",
+      scene: "湖场景"
+    },
+    {
+      id: 5,
+      name: "夏日入侵企画",
+      favoriteWork: "《想去海边》",
+      scene: "温暖 暖阳"
+    },
+    {
+      id: 6,
+      name: "橘子海",
+      favoriteWork: "《夏日漱石》",
+      scene: "节奏感 行进中 汽水 记忆中的夏天"
+    },
+    {
+      id: 7,
+      name: "马赛克",
+      favoriteWork: "《霓虹甜心》",
+      scene: "节奏感 复古 8,9 年代"
+    },
+    {
+      id: 8,
+      name: "回春丹",
+      favoriteWork: "《初恋》"
+    },
+    {
+      id: 9,
+      name: "鹿先森乐队",
+      favoriteWork: "《春风十里》"
+    },
+    {
+      id: 10,
+      name: "新裤子",
+      favoriteWork: "《没有理想的人不伤心》"
+    },
+    {
+      id: 11,
+      name: "落日飞车",
+      favoriteWork: "《My Jinji》"
+    },
+    {
+      id: 12,
+      name: "八三夭",
+      favoriteWork: "《想见你想见你想见你》"
+    },
+    {
+      id: 13,
+      name: "康姆士乐团",
+      favoriteWork: "《你永远是我的宝贝，宝贝》"
+    },
+    {
+      id: 14,
+      name: "和平饭店",
+      favoriteWork: "《你不爱我我就爱别人》"
+    },
+    {
+      id: 15,
+      name: "不可撤销",
+      favoriteWork: "《她》"
+    },
+    {
+      id: 16,
+      name: "帆布小镇",
+      favoriteWork: "《今夜无法入眠》"
+    },
+    {
+      id: 17,
+      name: "deca joins",
+      favoriteWork: "《浴室》"
+    },
+    {
+      id: 18,
+      name: "旅行团乐队",
+      favoriteWork: "《逝去的歌》"
+    },
+    {
+      id: 19,
+      name: "霓虹花园",
+      favoriteWork: "《无人的花园》"
+    },
+    {
+      id: 20,
+      name: "丢火车乐队",
+      favoriteWork: "《晚安》"
+    },
+    {
+      id: 21,
+      name: "麻园诗人",
+      favoriteWork: "《晚安》"
+    },
+    {
+      id: 22,
+      name: "草东没有派对",
+      favoriteWork: "《山海》"
+    },
+    {
+      id: 23,
+      name: "岛屿心情",
+      favoriteWork: "《8+8=8》"
+    },
+    {
+      id: 24,
+      name: "万能青年旅店",
+      favoriteWork: "《山雀》"
+    },
+    {
+      id: 25,
+      name: "SoulFa 灵魂沙发",
+      favoriteWork: "《沙发上的白日梦》"
+    },
+    {
+      id: 26,
+      name: "达达乐队",
+      favoriteWork: "《南方》"
+    },
+    {
+      id: 27,
+      name: "椅子乐团",
+      favoriteWork: "《Rollin on》"
+    },
+    {
+      id: 28,
+      name: "达闻西乐队",
+      favoriteWork: "《我要让你心碎》"
+    },
+    {
+      id: 29,
+      name: "时间不够以后",
+      favoriteWork: "《旋涡》"
+    },
+    {
+      id: 30,
+      name: "声音玩具",
+      favoriteWork: "《你的城市》"
+    }
   ]);
 
   return (

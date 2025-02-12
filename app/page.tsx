@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background pt-16">
         <div className="container mx-auto px-4 py-8">
           <div className="grid md:grid-cols-2 gap-6 max-w-7xl mx-auto">
             <div className="space-y-6">
