@@ -28,32 +28,32 @@ export function FormerNames() {
   };
 
   return (
-    <div className="max-w-md p-6 border border-border rounded-lg shadow bg-background">
-      <h2 className="mb-4 text-xl font-bold text-foreground">曾用名记录</h2>
-      <ul className="mb-4 divide-y divide-border">
+    <div className="max-w-md p-6 border border-border rounded-xl shadow-lg bg-background">
+      <h2 className="mb-6 text-2xl font-semibold text-foreground">曾用名记录</h2>
+      <ul className="mb-6 divide-y divide-border/50">
         {names.length === 0 ? (
-          <li className="py-2 text-muted">暂无记录</li>
+          <li className="py-3 text-muted-foreground/80">暂无记录</li>
         ) : (
           names.map((name, index) => (
-            <li key={index} className="py-2 text-foreground">
-              {name}
+            <li key={index} className="py-3 text-foreground hover:bg-accent/5 transition-colors">
+              <span className="pl-2">{name}</span>
             </li>
           ))
         )}
       </ul>
-      <div className="flex space-x-2">
+      <div className="flex gap-3">
         <input
           type="text"
           value={newName}
           onChange={handleInputChange}
           placeholder="请输入新的曾用名"
-          className="flex-1 px-3 py-2 border border-border rounded-md bg-background text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
+          className="flex-1 px-4 py-2 border border-border/50 rounded-lg bg-background text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-accent/80 focus:border-transparent transition-all"
           aria-label="新的曾用名"
         />
         <button
           type="button"
           onClick={handleAddName}
-          className="px-3 py-2 font-medium border border-transparent rounded-md bg-accent text-accent-foreground hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent"
+          className="px-4 py-2 font-medium border border-transparent rounded-lg bg-accent text-accent-foreground hover:bg-accent/80 focus:outline-none focus:ring-2 focus:ring-accent/80 focus:ring-offset-1 transition-colors"
           aria-label="添加曾用名"
         >
           添加
