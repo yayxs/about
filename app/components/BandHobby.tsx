@@ -10,7 +10,11 @@ interface BandInfo {
   scene?: string;
 }
 
-export function BandHobby() {
+interface BandHobbyProps {
+  preview?: boolean;
+}
+
+export function BandHobby({ preview = false }: BandHobbyProps) {
   // 初始化乐队信息
   const [bands] = React.useState<BandInfo[]>([
     {
@@ -175,17 +179,19 @@ export function BandHobby() {
     }
   ]);
 
+  const displayBands = preview ? bands.slice(0, 3) : bands;
+
   return (
-    <div className="max-w-4xl p-6 border border-border rounded-xl shadow-lg bg-background">
+    <div className="p-4 border border-border rounded-lg shadow bg-background">
       <h2 className="mb-6 text-2xl font-semibold text-foreground">乐队收藏夹</h2>
-      <ul className="space-y-3">
-        {bands.length === 0 ? (
-          <li className="py-3 text-muted-foreground/80">暂无记录</li>
+      <ul className="space-y-2">
+        {displayBands.length === 0 ? (
+          <li className="py-2 text-muted-foreground/80">暂无记录</li>
         ) : (
-          bands.map((band) => (
+          displayBands.map((band) => (
             <li
               key={band.id}
-              className="p-4 border border-border/50 rounded-lg bg-background hover:bg-accent/5 transition-colors"
+              className="p-3 border border-border/50 rounded-md bg-background hover:bg-accent/5 transition-colors"
             >
               <div className="space-y-2.5">
                 <h3 className="text-lg font-medium text-foreground">{band.name}</h3>
