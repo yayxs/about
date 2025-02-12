@@ -9,42 +9,47 @@ interface GitHubStatsProps {
 }
 
 export function GitHubStats({ username, preview = false }: GitHubStatsProps) {
-  // 构建多种统计卡片
-  const allStatsCards = [
+  const statsCards = [
     {
       title: "代码统计",
-      url: `https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&count_private=true&theme=default&locale=cn`
+      url: `https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&count_private=true&theme=default&locale=cn&hide_border=true&bg_color=ffffff`
     },
     {
       title: "语言分布",
-      url: `https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&langs_count=8&theme=default&locale=cn`
-    },
-    {
-      title: "周代码活动",
-      url: `https://github-readme-stats.vercel.app/api/wakatime?username=${username}&layout=compact&theme=default&locale=cn`
+      url: `https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&theme=default&locale=cn&hide_border=true&bg_color=ffffff`
     }
   ];
 
-  const displayCards = preview ? allStatsCards.slice(0, 2) : allStatsCards;
-
   return (
-    <div className="p-4 border border-border rounded-lg shadow bg-background">
-      <h2 className="mb-6 text-2xl font-semibold text-foreground">GitHub 开发统计</h2>
-      <div className="grid md:grid-cols-2 gap-3">
-        {displayCards.map((card, index) => (
-          <div key={index} className="space-y-2">
-            <h3 className="text-sm font-medium text-muted-foreground">{card.title}</h3>
+    <div className="space-y-6">
+      <div className="grid md:grid-cols-2 gap-4">
+        {statsCards.map((card, index) => (
+          <div key={index} className="p-4 border border-border rounded-lg bg-background">
+            <h3 className="text-sm font-medium text-muted-foreground mb-4">{card.title}</h3>
             <Image
               src={card.url}
-              alt={`${username} ${card.title}`}
-              width={600}
-              height={300}
-              className="w-full h-auto rounded-md border border-border/50"
-              loading="lazy"
+              alt={card.title}
+              width={450}
+              height={195}
+              className="w-full rounded-md"
+              priority
             />
           </div>
         ))}
       </div>
+      {!preview && (
+        <div className="p-4 border border-border rounded-lg bg-background">
+          <h3 className="text-sm font-medium text-muted-foreground mb-4">年度贡献</h3>
+          <Image
+            src={`https://ghchart.rshah.org/${username}`}
+            alt="GitHub Contributions"
+            width={800}
+            height={128}
+            className="w-full rounded-md"
+            priority
+          />
+        </div>
+      )}
     </div>
   );
 }
