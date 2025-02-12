@@ -3,6 +3,7 @@ import { FormerNames } from "./components/FormerNames";
 import { BandHobby } from "./components/BandHobby";
 import { GitHubStats } from "./components/GitHubStats";
 import { OpenSourceContributions } from "./components/OpenSourceContributions";
+import { DailyContributions } from "./components/DailyContributions";
 import Link from "next/link";
 
 export default function Home() {
@@ -70,6 +71,23 @@ export default function Home() {
                 </Link>
               </div>
               <BandHobby preview />
+            </div>
+          </div>
+
+          <div className="max-w-7xl mx-auto">
+            <div className="space-y-4">
+              <div className="flex justify-between items-center">
+                <h2 className="text-xl font-bold text-foreground border-b pb-2 border-border">
+                  代码量统计
+                </h2>
+                <Link
+                  href="/contributions-chart"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  查看更多 →
+                </Link>
+              </div>
+              <DailyContributions username="yayxs" preview />
             </div>
           </div>
         </div>

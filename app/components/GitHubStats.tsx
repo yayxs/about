@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 
 interface GitHubStatsProps {
   username: string;
@@ -33,9 +34,11 @@ export function GitHubStats({ username, preview = false }: GitHubStatsProps) {
         {displayCards.map((card, index) => (
           <div key={index} className="space-y-2">
             <h3 className="text-sm font-medium text-muted-foreground">{card.title}</h3>
-            <img
+            <Image
               src={card.url}
               alt={`${username} ${card.title}`}
+              width={600}
+              height={300}
               className="w-full h-auto rounded-md border border-border/50"
               loading="lazy"
             />

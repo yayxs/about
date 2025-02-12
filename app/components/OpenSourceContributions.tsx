@@ -9,7 +9,11 @@ interface Contribution {
   platform: "gitee" | "github";
 }
 
-export function OpenSourceContributions() {
+interface OpenSourceContributionsProps {
+  preview?: boolean;
+}
+
+export const OpenSourceContributions: React.FC<OpenSourceContributionsProps> = ({ preview = false }) => {
   const contributions: Contribution[] = [
     {
       title: "uni-app 中文文档修复",
@@ -25,10 +29,12 @@ export function OpenSourceContributions() {
     }
   ];
 
+  const displayContributions = preview ? contributions.slice(0, 2) : contributions;
+
   return (
     <div className="p-4 border border-border rounded-lg shadow bg-background">
       <div className="grid gap-3">
-        {contributions.map((contribution, index) => (
+        {displayContributions.map((contribution, index) => (
           <div
             key={index}
             className="p-3 border border-border/50 rounded-md bg-background hover:bg-accent/5 transition-colors group"
@@ -63,4 +69,4 @@ export function OpenSourceContributions() {
       </div>
     </div>
   );
-}
+};
