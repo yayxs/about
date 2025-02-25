@@ -10,17 +10,27 @@ export const metadata: Metadata = {
   description: "个人介绍网站",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="zh" suppressHydrationWarning>
-      <body className={inter.className}>
+    <html lang="zh" suppressHydrationWarning data-oid="_6bcgl:">
+      <body className={inter.className} data-oid="05pni7a">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
+          data-oid="u1c59j7"
         >
-          <main className="min-h-screen bg-background antialiased">{children}</main>
+          <main
+            className="min-h-screen bg-background antialiased"
+            data-oid="wnaw6yv"
+          >
+            {children}
+          </main>
         </ThemeProvider>
       </body>
     </html>
